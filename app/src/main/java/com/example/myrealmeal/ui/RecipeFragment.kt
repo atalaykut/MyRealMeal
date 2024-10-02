@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.myrealmeal.R
 import com.example.myrealmeal.databinding.FragmentRecipeBinding
 import com.example.myrealmeal.databinding.FragmentRecipeFavoriteBinding
@@ -24,6 +25,18 @@ class RecipeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //
+        binding.btnAykutFragment.setOnClickListener {
+
+            findNavController().navigate(R.id.aykutFragment)
+        }
+
+        binding.btnRecipeDetails.setOnClickListener {
+
+            findNavController().navigate(R.id.action_recipeFragment_to_recipeDetailFragment)
+
+        }
     }
 
 }

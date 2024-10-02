@@ -38,4 +38,9 @@
         android:name="com.example.myrealmeal.ui.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/aykutFragment"
+        android:name="com.example.myrealmeal.ui.AykutFragment"
+        android:label="fragment_aykut"
+        tools:layout="@layout/fragment_aykut" />
 </navigation>
