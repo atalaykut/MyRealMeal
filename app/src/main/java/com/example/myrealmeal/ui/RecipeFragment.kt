@@ -26,17 +26,8 @@ class RecipeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //
-        binding.btnAykutFragment.setOnClickListener {
+        // Buttons einbauen die "navigieren" sollen
 
-            findNavController().navigate(R.id.aykutFragment)
-        }
-
-        binding.btnRecipeDetails.setOnClickListener {
-
-            findNavController().navigate(R.id.action_recipeFragment_to_recipeDetailFragment)
-
-        }
     }
 
 }
