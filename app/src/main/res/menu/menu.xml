@@ -3,18 +3,18 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:icon="@android:drawable/btn_star_big_on"
+        android:icon="@drawable/baseline_home_24"
         android:title="Home" />
     <item
         android:id="@+id/recipeFragment"
-        android:icon="@android:drawable/btn_star_big_off"
+        android:icon="@drawable/baseline_food_bank_24"
         android:title="Recipe" />
     <item
         android:id="@+id/recipeFavoriteFragment"
-        android:icon="@android:drawable/btn_dialog"
+        android:icon="@drawable/baseline_favorite_24"
         android:title="Favorites" />
     <item
         android:id="@+id/settingsFragment"
-        android:icon="@android:drawable/ic_delete"
+        android:icon="@drawable/baseline_settings_24"
         android:title="Settings" />
 </menu>

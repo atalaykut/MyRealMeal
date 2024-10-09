@@ -1,15 +1,17 @@
 package com.example.myrealmeal
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.example.myrealmeal.data.database.Meals
+import com.example.myrealmeal.data.database.MealsDB
 import com.example.myrealmeal.databinding.ActivityMainBinding
+
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,5 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         val navController: NavController = navHost.navController
         binding.bottomNavigationView.setupWithNavController(navController)
+
+        val database = MealsDB.getDatabase(this)
+
+
+
+
     }
 }

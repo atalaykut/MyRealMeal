@@ -40,7 +40,7 @@
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/aykutFragment"
-        android:name="com.example.myrealmeal.ui.AykutFragment"
+        android:name="com.example.myrealmeal.data.AykutFragment"
         android:label="fragment_aykut"
         tools:layout="@layout/fragment_aykut" />
 </navigation>
