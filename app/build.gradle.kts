@@ -55,6 +55,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     kapt("androidx.room:room-compiler:2.6.1")
+    implementation("com.google.code.gson:gson:2.8.9")
     implementation("com.google.android.gms:play-services-auth:21.2.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
 
