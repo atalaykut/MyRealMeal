@@ -27,8 +27,32 @@ class RecipeDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        mainViewModel.currentRecipe.observe(viewLifecycleOwner) {
+            binding.ivPancake.load(it.image)
+            binding.tvPreparation.text = it.preparation
+
+            if(it.halal){
+                binding.ibHalal.load(R.drawable.halal)
+            } else {
+                binding.ibHalal.visibility = View.GONE
+            }
+
+            if(it.veggie){
+                binding.ivVeggie.load(R.drawable.veggie)
+            } else {
+                binding.ivVeggie.visibility = View.GONE
+            }
+
+            binding.tvTime.text = it.time
+            binding.tvIngredients.text = it.ingredients[0].name
+            binding.tvCalories.text = it.calories.toString()
+            binding.tvCarbs.text = it.carbs.toString()
+            binding.tvProtein.text = it.protein.toString()
+            binding.tvFat.text = it.fat.toString()
+        }
 
         binding.tvRezeptName.text = mainViewModel.currentRecipe.value?.name
+
 
         if(mainViewModel.currentRecipe.value != null){  // führt es nur aus, wenn das image nicht null ist
             binding.ivPancake.load(mainViewModel.currentRecipe.value!!.image)

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<ScrollView
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#D6D7D7"
     tools:context=".ui.RecipeDetailFragment">
 
 
@@ -25,29 +26,115 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvRecipeDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recipe-Details"
-            android:textSize="60sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivPancake" />
 
         <TextView
             android:id="@+id/tvRezeptName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="163dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="190dp"
+            android:layout_marginTop="8dp"
             android:text="RezeptName (Gericht)"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvRecipeDetails" />
+            app:layout_constraintTop_toBottomOf="@+id/ivPancake" />
+
+        <TextView
+            android:id="@+id/tv_preparation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:text="Zubereitung"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time" />
+
+        <ImageButton
+            android:id="@+id/ib_halal"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="87dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/halal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRezeptName" />
+
+        <ImageButton
+            android:id="@+id/iv_veggie"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="88dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/veggie"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRezeptName" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Dauer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRezeptName" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tv_ingredients"
+            android:layout_width="295dp"
+            android:layout_height="106dp"
+            android:layout_marginTop="24dp"
+            android:text="Zutaten"
+            app:layout_constraintBottom_toTopOf="@+id/tv_preparation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time" />
+
+        <TextView
+            android:id="@+id/tv_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="321dp"
+            android:text="kcal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_ingredients"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ingredients" />
+
+        <TextView
+            android:id="@+id/tv_carbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="321dp"
+            android:text="Kohlenhydrate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_ingredients"
+            app:layout_constraintTop_toBottomOf="@+id/tv_calories" />
+
+        <TextView
+            android:id="@+id/tv_protein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="94dp"
+            android:text="Eiweiß"
+            app:layout_constraintEnd_toStartOf="@+id/tv_preparation"
+            app:layout_constraintStart_toStartOf="@+id/tv_carbs"
+            app:layout_constraintTop_toBottomOf="@+id/tv_carbs" />
+
+        <TextView
+            android:id="@+id/tv_fat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="355dp"
+            android:text="Fette"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_protein"
+            app:layout_constraintTop_toBottomOf="@+id/tv_protein" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</com.google.android.material.card.MaterialCardView>
+</ScrollView>

@@ -28,6 +28,5 @@ class MainActivity : AppCompatActivity() {
         val repository = Repository(
             database = MealsDB.getDatabase(this)
         )
-        repository.saveRecipes()
     }
 }

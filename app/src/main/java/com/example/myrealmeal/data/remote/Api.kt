@@ -10,10 +10,11 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 
-const val BASE_URL = "https://aykutatalay.mlm4u.eu"
+const val BASE_URL = "https://aykutatalay.mlm4u.eu/api/"
+
 
 private val logger = HttpLoggingInterceptor().apply {
-    level = HttpLoggingInterceptor.Level.BODY
+    level = HttpLoggingInterceptor.Level.BASIC
 }
 
 private val client = OkHttpClient.Builder()
@@ -32,7 +33,7 @@ private val retrofit = Retrofit.Builder()
 
 interface Api {
 
-    @GET("api/recipes.json")
+    @GET("recipes.json")
     suspend fun getRecipesApi(): RecipeResponse
 }
 

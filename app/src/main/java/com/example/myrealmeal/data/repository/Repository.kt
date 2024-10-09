@@ -1,5 +1,6 @@
 package com.example.myrealmeal.data.repository
 
+import android.util.Log
 import com.example.myrealmeal.data.database.Meals
 import com.example.myrealmeal.data.database.MealsDB
 import com.example.myrealmeal.data.remote.Api
@@ -18,6 +19,7 @@ class Repository(
             val response = api.getRecipesApi()
             response.meals.forEach {
                 database.mealsDao.insert(it)
+                Log.d("Repository", "saveRecipes: $it")
             }
         }
     }

@@ -30,11 +30,12 @@ class RecipeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+
         // Buttons einbauen die "navigieren" sollen
 
         mainViewModel.recipes.observe(viewLifecycleOwner) {
            Log.d("RecipeFragment", "onViewCreated: ${it.size}")
-            binding.rvRecipesList.adapter = RecipeAdapter(recipes = it, mainViewModel)
+            binding.rvRecipesList.adapter = RecipeAdapter(it, mainViewModel)
         }
 
     }
