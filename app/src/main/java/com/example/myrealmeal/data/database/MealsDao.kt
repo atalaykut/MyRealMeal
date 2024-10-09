@@ -6,7 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 
-//Dao ist die SQL Abfrage für die Datenbank
+//Dao ist die SQL Abfrage für die Datenbankjjk
 @Dao
 interface MealsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
