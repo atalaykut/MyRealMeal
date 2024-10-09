@@ -69,6 +69,10 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-analytics")
+
+    // Coil for image loading
+    implementation("io.coil-kt:coil:2.3.0")
+    implementation("io.coil-kt:coil-base:2.3.0")
 }
 
 

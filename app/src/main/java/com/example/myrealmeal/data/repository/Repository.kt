@@ -1,5 +1,6 @@
 package com.example.myrealmeal.data.repository
 
+import com.example.myrealmeal.data.database.Meals
 import com.example.myrealmeal.data.database.MealsDB
 import com.example.myrealmeal.data.remote.Api
 import com.example.myrealmeal.data.remote.RecipesApi
@@ -12,12 +13,28 @@ class Repository(
     private val database: MealsDB
 ) {
     // lädt rezepte und speichert diese ein
-    fun saveRecpies() {
+    fun saveRecipes() {
         CoroutineScope(Dispatchers.IO).launch {
             val response = api.getRecipesApi()
             response.meals.forEach {
                 database.mealsDao.insert(it)
             }
         }
+    }
+
+    suspend fun getAll(): List<Meals> {
+        return database.mealsDao.getAll()
+    }
+
+    suspend fun getVeggie(): List<Meals> {
+        return database.mealsDao.getVeggie()
+    }
+
+    suspend fun getHalal(): List<Meals> {
+        return database.mealsDao.getHalal()
+    }
+
+    suspend fun getFavorite(): List<Meals> {
+        return database.mealsDao.getFavorite()
     }
 }

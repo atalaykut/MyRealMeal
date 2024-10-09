@@ -21,6 +21,10 @@ interface MealsDao {
     @Query("SELECT * FROM meals_table WHERE halal is 1")
     suspend fun getHalal(): List<Meals>
 
+    @Query("SELECT * FROM meals_table WHERE favorite is 1")
+    suspend fun getFavorite(): List<Meals>
+
+
 
 
 }
