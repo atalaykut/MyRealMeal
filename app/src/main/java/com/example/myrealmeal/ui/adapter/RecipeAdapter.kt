@@ -33,7 +33,7 @@ class RecipeAdapter (
         holder.binding.tvZeit.text = recipe.time
         holder.binding.Ernaehrungsform.text = recipe.veggie.toString()
         holder.binding.ivWishlistImage.load(recipe.image)
-        holder.binding.profileImageCardView.setOnClickListener {
+        holder.binding.recipeFrame.setOnClickListener {
             mainViewModel.setCurrentRecipe(recipe)
             holder.itemView.findNavController().navigate(R.id.action_recipeFragment_to_recipeDetailFragment)
         }

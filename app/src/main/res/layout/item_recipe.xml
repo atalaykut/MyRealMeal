@@ -10,13 +10,12 @@
 
 
         <LinearLayout
+            android:id="@+id/recipeFrame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#E4F2D8"
-            android:padding="0dp"
-            android:layout_marginBottom="8dp">
-
+            android:padding="0dp">
 
 
             <com.google.android.material.card.MaterialCardView
@@ -26,8 +25,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:elevation="4dp"
-                >
+                android:elevation="4dp">
 
                 <ImageView
                     android:id="@+id/iv_wishlist_image"
@@ -97,7 +95,6 @@
                                 android:layout_height="match_parent" />
 
 
-
                             <TextView
                                 android:id="@+id/tv_Zeit"
                                 android:layout_width="wrap_content"
@@ -108,8 +105,6 @@
 
                         </LinearLayout>
                     </LinearLayout>
-
-
 
 
                     <LinearLayout
@@ -129,7 +124,6 @@
                                 android:textColor="@color/black"
                                 android:textSize="14dp"
                                 android:textStyle="bold" />
-
 
 
                         </LinearLayout>
