@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.myrealmeal.databinding.FragmentRecipeBinding
 import com.example.myrealmeal.ui.adapter.RecipeAdapter
+import com.example.myrealmeal.ui.adapter.RecipeFavoriteAdapter
 
 import com.example.myrealmeal.viewModel.MainViewModel
 
@@ -22,7 +23,7 @@ class RecipeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentRecipeBinding.inflate(layoutInflater)
+        binding = FragmentRecipeBinding.inflate(inflater, container, false)
         return binding.root
     }
 

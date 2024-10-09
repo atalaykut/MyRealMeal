@@ -22,7 +22,7 @@ data class Meals(
     val fat: Double = 0.0,
     val veggie: Boolean = false,
     val halal: Boolean = false,
-    val favorite: Boolean = false
+    var favorite: Boolean = false
 )
 
 data class Ingredient(

@@ -18,6 +18,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val recipes: LiveData<List<Meals>>
         get() = _recipes
 
+    private val _favoriteRecipes = MutableLiveData<List<Meals>>()
+    val favoriteRecipes: LiveData<List<Meals>>
+        get() = _favoriteRecipes
+
 
     private val _currentRecipe = MutableLiveData<Meals>()
     val currentRecipe: LiveData<Meals>
@@ -48,12 +52,18 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getFavorites() {
         viewModelScope.launch {
-            _recipes.value = repository.getFavorite()
+            _favoriteRecipes.postValue(repository.getFavorite())
         }
 
     }
     fun setCurrentRecipe(recipe: Meals) {
         _currentRecipe.value = recipe
+    }
+
+    fun insertFavorite(meal: Meals) {
+        viewModelScope.launch {
+            repository.insertFavorite(meal)
+        }
     }
 
 }

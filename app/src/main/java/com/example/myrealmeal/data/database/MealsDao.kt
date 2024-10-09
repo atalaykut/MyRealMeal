@@ -25,8 +25,6 @@ interface MealsDao {
     suspend fun getFavorite(): List<Meals>
 
 
-
-
 }
 
 

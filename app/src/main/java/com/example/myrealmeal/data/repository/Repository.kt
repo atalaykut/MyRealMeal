@@ -39,4 +39,9 @@ class Repository(
     suspend fun getFavorite(): List<Meals> {
         return database.mealsDao.getFavorite()
     }
+    suspend fun insertFavorite(meal: Meals) {
+        database.mealsDao.insert(meal)
+
+    }
+
 }
