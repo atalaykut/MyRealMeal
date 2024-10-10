@@ -33,10 +33,11 @@ class RecipeFavoriteAdapter (
         holder.binding.tvZeit.text = recipe.time
         holder.binding.Ernaehrungsform.text = recipe.veggie.toString()
         holder.binding.ivWishlistImage.load(recipe.image)
-        holder.binding.recipeFrame.setOnClickListener {
+
+       /* holder.binding.recipeFrame.setOnClickListener {
             mainViewModel.setCurrentRecipe(recipe)
             holder.itemView.findNavController().navigate(R.id.action_recipeFragment_to_recipeDetailFragment)
-        }
+        } */
     }
 
     override fun getItemCount(): Int {

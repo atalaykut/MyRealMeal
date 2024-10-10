@@ -32,6 +32,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         getAll()
     }
 
+
     fun getVeggie() {
         viewModelScope.launch {
             _recipes.value = repository.getVeggie()
@@ -48,6 +49,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             _recipes.value = repository.getAll()
         }
+    }
+
+    fun updateCurrentRecipe(recipe: Meals){
+        _currentRecipe.value = recipe
     }
 
     fun getFavorites() {

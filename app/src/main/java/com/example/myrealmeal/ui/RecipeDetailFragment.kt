@@ -56,14 +56,23 @@ class RecipeDetailFragment : Fragment() {
             binding.tvProtein.text = it.protein.toString()
             binding.tvFat.text = it.fat.toString()
 
+
+            binding.ibFav.setImageResource(if (it.favorite) R.drawable.baseline_favorite_24 else R.drawable.baseline_favorite_border_24)
+
+
             binding.ibFav.setOnClickListener {
-                mainViewModel.currentRecipe.value?.let {
-                    binding.ibFav.setImageResource(if (it.favorite) R.drawable.baseline_favorite_24 else R.drawable.baseline_favorite_border_24)
-                    if (it.favorite) {
-                        mainViewModel.insertFavorite(it.apply { favorite = false })
+                mainViewModel.currentRecipe.value?.let {meal ->
+                    binding.ibFav.setImageResource(if (meal.favorite) R.drawable.baseline_favorite_24 else R.drawable.baseline_favorite_border_24)
+                    if (!meal.favorite) {  // Wenn das Rezept als Favorit markiert ist (true)
+                        var new = meal.copy(favorite = true)
+                        mainViewModel.insertFavorite(new)
+                        mainViewModel.updateCurrentRecipe(new)
                     } else {
-                        mainViewModel.insertFavorite(it.apply { favorite = true })
+                        var new = meal.copy(favorite = false)
+                        mainViewModel.insertFavorite(new)
+                        mainViewModel.updateCurrentRecipe(new)
                     }
+
                 }
 
         }

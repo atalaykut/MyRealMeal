@@ -6,14 +6,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#D6D7D7"
+    android:background="#D6D7D7"
     tools:context=".ui.RecipeDetailFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#D6D7D7">
+        android:background="#D6D7D7"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="0dp">
 
 
         <ImageView
@@ -74,10 +76,9 @@
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="36dp"
             android:text="Dauer"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvRezeptName" />
 
@@ -85,57 +86,54 @@
             android:id="@+id/rv_ingredients"
             android:layout_width="295dp"
             android:layout_height="106dp"
-            android:layout_marginTop="24dp"
             android:text="Zutaten"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/tv_preparation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_time" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_preparation" />
 
         <TextView
             android:id="@+id/tv_calories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="321dp"
+            android:layout_marginStart="52dp"
             android:text="kcal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/rv_ingredients"
-            app:layout_constraintTop_toBottomOf="@+id/rv_ingredients" />
+            app:layout_constraintBottom_toTopOf="@+id/tv_preparation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time" />
 
         <TextView
             android:id="@+id/tv_carbs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="321dp"
-            android:text="Kohlenhydrate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/rv_ingredients"
-            app:layout_constraintTop_toBottomOf="@+id/tv_calories" />
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="60dp"
+            android:text="50.0"
+            app:layout_constraintBottom_toTopOf="@+id/tv_preparation"
+            app:layout_constraintEnd_toStartOf="@+id/tv_gramm"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_kohlenhydrate" />
 
         <TextView
             android:id="@+id/tv_protein"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="94dp"
-            android:text="Eiweiß"
-            app:layout_constraintEnd_toStartOf="@+id/tv_preparation"
-            app:layout_constraintStart_toStartOf="@+id/tv_carbs"
-            app:layout_constraintTop_toBottomOf="@+id/tv_carbs" />
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="60dp"
+            android:text="20.0"
+            app:layout_constraintBottom_toTopOf="@+id/tv_preparation"
+            app:layout_constraintEnd_toStartOf="@+id/tv_gramm_pro"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_eiweiß" />
 
         <TextView
             android:id="@+id/tv_fat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="355dp"
-            android:text="Fette"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tv_protein"
-            app:layout_constraintTop_toBottomOf="@+id/tv_protein" />
+            android:layout_marginBottom="60dp"
+            android:text="7.0"
+            app:layout_constraintBottom_toTopOf="@+id/tv_preparation"
+            app:layout_constraintStart_toStartOf="@+id/tv_fette" />
 
         <ImageButton
             android:id="@+id/ib_fav"
@@ -150,6 +148,84 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_kcal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginBottom="8dp"
+            android:text="kcal"
+            app:layout_constraintBottom_toTopOf="@+id/tv_calories"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time"
+            app:layout_constraintVertical_bias="0.823" />
+
+        <TextView
+            android:id="@+id/tv_kohlenhydrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:text="Kohlenhydrate"
+            app:layout_constraintBottom_toTopOf="@+id/tv_carbs"
+            app:layout_constraintStart_toEndOf="@+id/tv_kcal"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time"
+            app:layout_constraintVertical_bias="0.666" />
+
+        <TextView
+            android:id="@+id/tv_eiweiß"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:text="Eiweiß"
+            app:layout_constraintBottom_toTopOf="@+id/tv_protein"
+            app:layout_constraintStart_toEndOf="@+id/tv_kohlenhydrate"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time"
+            app:layout_constraintVertical_bias="0.666" />
+
+        <TextView
+            android:id="@+id/tv_fette"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:text="Fette"
+            app:layout_constraintBottom_toTopOf="@+id/tv_fat"
+            app:layout_constraintStart_toEndOf="@+id/tv_eiweiß"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time"
+            app:layout_constraintVertical_bias="0.666" />
+
+        <TextView
+            android:id="@+id/tv_gramm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="g"
+            app:layout_constraintBottom_toTopOf="@+id/tv_preparation"
+            app:layout_constraintEnd_toEndOf="@+id/tv_kohlenhydrate"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kohlenhydrate"
+            app:layout_constraintVertical_bias="0.015" />
+
+        <TextView
+            android:id="@+id/tv_gramm_pro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="g"
+            app:layout_constraintBottom_toTopOf="@+id/tv_preparation"
+            app:layout_constraintEnd_toEndOf="@+id/tv_eiweiß"
+            app:layout_constraintTop_toBottomOf="@+id/tv_eiweiß"
+            app:layout_constraintVertical_bias="0.015" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="g"
+            app:layout_constraintBottom_toTopOf="@+id/tv_preparation"
+            app:layout_constraintEnd_toEndOf="@+id/tv_fette"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fette"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

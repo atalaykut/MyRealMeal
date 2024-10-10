@@ -23,7 +23,6 @@
         android:id="@+id/rv_fav_rec"
         android:layout_width="329dp"
         android:layout_height="472dp"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="98dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"

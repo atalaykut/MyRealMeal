@@ -13,8 +13,4 @@
         android:id="@+id/recipeFavoriteFragment"
         android:icon="@drawable/baseline_favorite_24"
         android:title="Favorites" />
-    <item
-        android:id="@+id/settingsFragment"
-        android:icon="@drawable/baseline_settings_24"
-        android:title="Settings" />
 </menu>

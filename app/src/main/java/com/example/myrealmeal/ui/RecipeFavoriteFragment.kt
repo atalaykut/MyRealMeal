@@ -16,8 +16,6 @@ class RecipeFavoriteFragment : Fragment() {
     private lateinit var binding: FragmentRecipeFavoriteBinding
     private val mainViewModel: MainViewModel by activityViewModels()
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
